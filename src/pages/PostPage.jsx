@@ -17,11 +17,14 @@ const PostPage = () => {
 
   useEffect(() => {
     if (posts) {
+      window.scrollTo({
+        top: 0,
+      });
       const requiredPost = posts.find((p) => p._id === id);
       setCurrentPost(requiredPost);
       setIsLoading(false);
     }
-  }, [posts]);
+  }, [posts, id]);
 
   useEffect(() => {
     if (currentPost) {
